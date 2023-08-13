@@ -3,6 +3,8 @@ import cartItems from '../../cartItems';
 
 const url = 'https://course-api.com/react-useReducer-cart-project';
 
+
+
 const initialState = {
   cartItems: [],
   amount: 4,
@@ -10,11 +12,15 @@ const initialState = {
   isLoading: true,
 };
 
+
+
 export const getCartItems = createAsyncThunk('cart/getCartItems', () => {
   return fetch(url)
     .then((resp) => resp.json())
     .catch((err) => console.log(err));
 });
+
+
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -60,6 +66,10 @@ const cartSlice = createSlice({
   },
 });
 
+
+
 export const { clearCart, removeItem, increase, decrease, calculateTotals } = cartSlice.actions;
+
+
 
 export default cartSlice.reducer;

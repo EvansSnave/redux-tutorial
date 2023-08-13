@@ -6,6 +6,9 @@ import { useDispatch } from 'react-redux';
 const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();
 
+
+
+
   return (
     <article className="cart-item">
       <img src={img} alt={title}></img>
@@ -37,5 +40,9 @@ const CartItem = ({ id, img, title, price, amount }) => {
     </article>
   );
 };
+
+
+
+
 
 export default CartItem;

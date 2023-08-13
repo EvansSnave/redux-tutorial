@@ -1,10 +1,13 @@
-import CartItem from './CartItem';
+import CartItem from './Items';
 import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from '../features/modal/modalSlice';
+
+
 
 const CartContainer = () => {
   const dispatch = useDispatch();
   const { cartItems, total, amount } = useSelector((store) => store.cart);
+
 
   if (amount < 1) {
     return (
@@ -16,6 +19,7 @@ const CartContainer = () => {
       </section>
     );
   }
+
 
   return (
     <section className="cart">
@@ -41,5 +45,7 @@ const CartContainer = () => {
     </section>
   );
 };
+
+
 
 export default CartContainer;
